@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps — The Self Study</title>
+<style>
+  :root {
+    --green: #3F592E;
+    --plumb: #4A2E59;
+    --taupe: #C4B7A6;
+    --cream: #F8F6F3;
+    --charcoal: #59572E;
+    --gray: #7A7A7A;
+    --teal: #104B55;
+    --border: #E8E4DF;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    text-align: center;
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  header p {
+    font-size: 1.125rem;
+    color: var(--gray);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .apps {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    flex: 1;
+  }
+
+  .apps h2 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .app-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .app-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .app-card {
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    display: block;
+  }
+
+  .app-card:hover {
+    border-color: var(--green);
+    box-shadow: 0 4px 16px rgba(61, 61, 61, 0.12);
+  }
+
+  .app-card .icon {
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .app-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+
+  .app-card p {
+    font-size: 0.875rem;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  .app-card .tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: var(--cream);
+    color: var(--green);
+  }
+
+  /* Invoice logo animation */
+  .inv-line-1 { animation: invLine 3.6s ease-in-out infinite; }
+  .inv-line-2 { animation: invLine 3.6s ease-in-out 0.3s infinite; }
+  .inv-line-3 { animation: invLine 3.6s ease-in-out 0.6s infinite; }
+  .inv-dot    { animation: invDot  3.6s ease-in-out infinite; transform-origin: 32px 30px; }
+
+  @keyframes invLine {
+    0%, 100% { opacity: 0.25; }
+    40%, 60% { opacity: 1; }
+  }
+  @keyframes invDot {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.18); }
+  }
+
+  /* Cadence logo animation */
+  .cadence-logo { display: inline-block; }
+
+  @keyframes colorCycle0 {
+    0%   { stroke: #791D1E; }
+    25%  { stroke: rgba(63, 89, 46, 0.5); }
+    50%  { stroke: #104B55; }
+    75%  { stroke: #C4B7A6; }
+    100% { stroke: #791D1E; }
+  }
+  @keyframes colorCycle2 {
+    0%   { stroke: #104B55; }
+    25%  { stroke: #C4B7A6; }
+    50%  { stroke: #791D1E; }
+    75%  { stroke: rgba(63, 89, 46, 0.5); }
+    100% { stroke: #104B55; }
+  }
+  @keyframes colorCycle3 {
+    0%   { stroke: #C4B7A6; }
+    25%  { stroke: #791D1E; }
+    50%  { stroke: rgba(63, 89, 46, 0.5); }
+    75%  { stroke: #104B55; }
+    100% { stroke: #C4B7A6; }
+  }
+  @keyframes fillCycle1 {
+    0%   { fill: rgba(63, 89, 46, 0.5); }
+    25%  { fill: #104B55; }
+    50%  { fill: #C4B7A6; }
+    75%  { fill: #791D1E; }
+    100% { fill: rgba(63, 89, 46, 0.5); }
+  }
+
+  .cadence-logo .outer  { animation: colorCycle3 8s ease-in-out infinite; }
+  .cadence-logo .middle { animation: colorCycle2 8s ease-in-out infinite; }
+  .cadence-logo .inner  { animation: colorCycle0 8s ease-in-out infinite; }
+  .cadence-logo .heart  { animation: fillCycle1  8s ease-in-out infinite; }
+
+  .footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Apps</h1>
+  <p>Internal tools. For authorised users only.</p>
+</header>
+
+<div class="apps">
+  <h2>Available</h2>
+  <div class="app-grid">
+
+    <!-- Cadence -->
+    <a class="app-card" href="https://the-self-study.com/cadence/" target="_blank" rel="noopener">
+      <span class="icon">
+        <svg class="cadence-logo" width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path class="outer" d="M78,22 A40,40 0 1 0 78,78" fill="none" stroke="#104B55" stroke-width="6" stroke-linecap="round"/>
+          <path class="middle" d="M30,30 A28,28 0 1 1 30,70" fill="none" stroke="#3F592E" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+          <path class="inner" d="M61,39 A16,16 0 1 0 61,61" fill="none" stroke="#C4B7A6" stroke-width="6" stroke-linecap="round"/>
+          <path class="heart" d="M50,56 C50,56 44,50 44,47 C44,44 46,42 50,46 C54,42 56,44 56,47 C56,50 50,56 50,56 Z" fill="#791D1E"/>
+        </svg>
+      </span>
+      <h3>Cadence</h3>
+      <p>Privacy-first body tracking. Log health metrics with data stored locally or in your own Google Sheet.</p>
+      <span class="tag">Health Tracking</span>
+    </a>
+
+    <!-- Invoice Builder -->
+    <a class="app-card" href="https://apw-invoices.the-self-study.com" target="_blank" rel="noopener">
+      <span class="icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <!-- Document body -->
+          <rect x="6" y="4" width="22" height="28" rx="2" ry="2" fill="none" stroke="#104B55" stroke-width="2.2" stroke-linejoin="round"/>
+          <!-- Folded corner -->
+          <polyline points="22,4 28,4 28,10 22,10 22,4" fill="#f0e5ec" stroke="#A0667F" stroke-width="2.2" stroke-linejoin="round"/>
+          <!-- Line items -->
+          <line class="inv-line-1" x1="10" y1="15" x2="24" y2="15" stroke="#A0667F" stroke-width="1.8" stroke-linecap="round"/>
+          <line class="inv-line-2" x1="10" y1="20" x2="24" y2="20" stroke="#A0667F" stroke-width="1.8" stroke-linecap="round"/>
+          <line class="inv-line-3" x1="10" y1="25" x2="17" y2="25" stroke="#A0667F" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Accent dot -->
+          <circle class="inv-dot" cx="32" cy="30" r="5" fill="#A0667F"/>
+          <line x1="30" y1="30" x2="34" y2="30" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32" y1="28" x2="32" y2="32" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <h3>Invoice Builder</h3>
+      <p>Generate and export branded invoices. Syncs client info and line items to Google Sheets.</p>
+      <span class="tag">Invoicing</span>
+    </a>
+
+  </div>
+</div>
+
+<div class="footer">
+  For internal use only. Do not share this URL.
+</div>
+
+</body>
+</html>
