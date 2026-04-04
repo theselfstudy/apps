@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apps — The Self Study</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Pacifico&display=swap" rel="stylesheet">
 <style>
   :root {
     --green: #3F592E;
@@ -103,6 +104,12 @@
     color: var(--charcoal);
     margin-bottom: 0.5rem;
   }
+
+  .app-card-invoice h3 { color: #A0667F; font-family: 'DM Serif Display', serif; font-weight: 400; }
+  .app-card-invoice:hover { border-color: #A0667F; }
+
+  .app-card-lgb h3 { color: #C17F24; font-family: 'Pacifico', cursive; font-weight: 400; text-transform: lowercase; }
+  .app-card-lgb:hover { border-color: #C17F24; }
 
   .app-card p {
     font-size: 0.875rem;
@@ -212,7 +219,7 @@
     </a>
 
     <!-- Invoice Builder -->
-    <a class="app-card" href="https://apw-invoices.the-self-study.com" target="_blank" rel="noopener">
+    <a class="app-card app-card-invoice" href="https://apw-invoices.the-self-study.com" target="_blank" rel="noopener">
       <span class="icon">
         <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
           <!-- Document body -->
@@ -232,6 +239,40 @@
       <h3>Invoice Builder</h3>
       <p>Generate and export branded invoices. Syncs client info and line items to Google Sheets.</p>
       <span class="tag">Invoicing</span>
+    </a>
+
+    <!-- Let's Get Beany -->
+    <a class="app-card app-card-lgb" href="https://lgb.the-self-study.com/" target="_blank" rel="noopener">
+      <span class="icon">
+        <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Mug Handle -->
+          <path d="M145,95 Q175,95 175,110 Q175,125 145,125" fill="none" stroke="#F5F5DC" stroke-width="5" stroke-linecap="round" />
+          <!-- Mug Body -->
+          <path d="M50,80 L150,80 Q150,140 100,140 Q50,140 50,80 Z" fill="#4B2C20" stroke="#F5F5DC" stroke-width="2" />
+          <!-- Mug Rim -->
+          <ellipse cx="100" cy="80" rx="52" ry="12" fill="none" stroke="#F5F5DC" stroke-width="4" />
+          <!-- Coffee Surface -->
+          <ellipse cx="100" cy="80" rx="50" ry="10" fill="#D2B48C" />
+          <!-- Steam Wisps -->
+          <g stroke="#A9A9A9" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M80,65 Q75,50 80,35">
+              <animate attributeName="d" values="M80,65 Q75,50 80,35; M80,65 Q85,50 80,35; M80,65 Q75,50 80,35" dur="3s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+            </path>
+            <path d="M100,60 Q105,45 100,30">
+              <animate attributeName="d" values="M100,60 Q105,45 100,30; M100,60 Q95,45 100,30; M100,60 Q105,45 100,30" dur="4s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" />
+            </path>
+            <path d="M120,65 Q115,50 120,35">
+              <animate attributeName="d" values="M120,65 Q115,50 120,35; M120,65 Q125,50 120,35; M120,65 Q115,50 120,35" dur="3.5s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" />
+            </path>
+          </g>
+        </svg>
+      </span>
+      <h3>Let's Get Beany</h3>
+      <p>Personal brew journal and bean catalog. Log sessions, track flavors, and sync to your own Google Sheet.</p>
+      <span class="tag">Coffee Tracking</span>
     </a>
 
   </div>
