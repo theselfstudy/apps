@@ -111,6 +111,13 @@
   .app-card-lgb h3 { color: #C17F24; font-family: 'Pacifico', cursive; font-weight: 400; text-transform: lowercase; }
   .app-card-lgb:hover { border-color: #C17F24; }
 
+  .app-card-att h3 { color: #7A8A8B; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; text-transform: lowercase; letter-spacing: 0.35em; }
+  .app-card-att:hover { border-color: #909C41; }
+
+  /* At the Table bowl — start invisible; JS drives the draw animation */
+  .att-path  { fill-opacity: 0; stroke-dashoffset: 9999; }
+  .att-gleam { fill-opacity: 0; }
+
   .app-card p {
     font-size: 0.875rem;
     color: var(--gray);
@@ -218,6 +225,33 @@
       <span class="tag">Health Tracking</span>
     </a>
 
+    <!-- At the Table -->
+    <a class="app-card app-card-att" href="https://att.the-self-study.com" target="_blank" rel="noopener">
+      <span class="icon">
+        <!-- Animated bowl icon with steam -->
+        <svg id="att-bowl" width="53" height="40" viewBox="60 400 1700 1290" fill="none" stroke-linecap="round" stroke-linejoin="round" overflow="visible" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="att-utensil-clip">
+              <rect x="-200" y="360" width="2200" height="540"/>
+              <path d="M96.26,833.726c-0.536,-0.54 -0.8,-0.82 -0.8,-0.82c-0,-0 4.106,0.892 5.1,-0.161c19.402,-20.543 241.561,-131.967 814.354,-131.967c588.747,0 783.934,125.081 790.137,131.967c0.096,0.107 0.144,0.161 0.144,0.161c-0,-0 -2.21,0.767 -2.261,0.82c-4.538,4.723 -209.585,216.274 -800.795,216.274c-580.513,0 -791.474,-201.78 -805.879,-216.274Z" fill="black"/>
+            </clipPath>
+          </defs>
+          <path class="att-path att-body" d="M1705.12,835.715c13.528,48.303 -206.787,822.994 -804.326,822.994c-599.014,0 -817.926,-774.179 -804.532,-822.256c0.225,-0.807 0.452,-1.613 0.68,-2.418c19.402,-20.475 243.044,-142.443 815.837,-142.443c588.747,-0 786.071,137.02 792.274,143.883c0.022,0.08 0.045,0.16 0.067,0.24Z" fill="#63411B" stroke="#6B797B" stroke-width="12"/>
+          <path class="att-gleam" d="M189.089,1038.04c25.495,-10.791 188.512,237.441 301.521,341.516c133.213,122.683 343.602,226.96 339.866,241.187c-8.453,32.189 -296.076,-85.974 -422.238,-223.823c-117.599,-128.495 -232.135,-353.384 -219.149,-358.88Z" fill="white" stroke="none"/>
+          <path class="att-path att-rim" d="M96.26,833.726c-0.536,-0.54 -0.8,-0.82 -0.8,-0.82c-0,-0 4.106,0.892 5.1,-0.161c19.402,-20.543 241.561,-131.967 814.354,-131.967c588.747,0 783.934,125.081 790.137,131.967c0.096,0.107 0.144,0.161 0.144,0.161c-0,-0 -2.21,0.767 -2.261,0.82c-4.538,4.723 -209.585,216.274 -800.795,216.274c-580.513,0 -791.474,-201.78 -805.879,-216.274Z" fill="#2F3C3E" stroke="#6B797B" stroke-width="12"/>
+          <path class="att-path att-utensil" d="M781.964,1276.66c-205.954,-250.512 -413.475,-499.733 -619.429,-750.245c-2.677,-3.257 -4.612,-7.096 -6.36,-10.933c-1.702,-3.732 -3.01,-7.664 -3.939,-11.66c-0.914,-3.936 -1.429,-7.982 -1.566,-12.021c-0.137,-4.012 0.119,-8.056 0.747,-12.022c0.629,-3.966 1.635,-7.89 3.006,-11.665c1.379,-3.798 3.119,-7.487 5.206,-10.947c2.118,-3.513 4.577,-6.848 7.349,-9.872c0.012,-0.013 9.437,-8.438 9.445,-8.443c3.643,-2.12 7.096,-4.611 10.932,-6.36c3.733,-1.702 7.664,-3.009 11.66,-3.938c3.936,-0.915 7.982,-1.429 12.021,-1.567c4.013,-0.137 8.056,0.119 12.022,0.748c3.966,0.628 7.891,1.635 11.665,3.005c3.798,1.379 7.487,3.119 10.948,5.206c3.513,2.118 6.847,4.577 9.871,7.349c3.108,2.849 6.162,5.876 8.431,9.429c174.579,273.305 347.447,547.7 522.026,821.005l-4.035,2.931Z" fill="#909C41" stroke="#909C41" stroke-width="12" clip-path="url(#att-utensil-clip)"/>
+          <g transform="translate(-511 -954) scale(1.3635)">
+            <path class="att-path att-steam1" d="M1066.44,700.014c0,-0 6.498,95.026 6.865,95.92c0.368,0.894 -1.656,36.017 -6.865,54.274c-5.655,19.821 -14.254,45.442 -27.067,64.654c-25.06,37.576 -96.778,118.395 -116.796,163.482c-13.683,30.817 -10.418,76.149 -4.929,104.742c4.884,25.445 17.091,49.903 32.933,70.405c17.926,23.199 74.624,68.79 74.624,68.79c1.191,5.368 -65.742,-80.419 -74.624,-127.411c-4.785,-25.312 -3.04,-51.605 4.565,-75.552c9.186,-28.924 27.337,-68.534 50.551,-97.993c26.631,-33.795 58.527,-48.204 78.348,-100.916c14.831,-39.441 10.896,-110.132 5.787,-143.972c-4.273,-28.308 -23.392,-76.423 -23.392,-76.423Z" fill="#B8C4C6" stroke="#B8C4C6" stroke-width="8"/>
+            <path class="att-path att-steam2" d="M996.418,1110.58c-8.131,27.662 18.878,86.547 18.878,86.547c0,-0 -5.637,-55.423 2.66,-74.23c12.714,-28.816 59.564,-84.181 72.804,-106.553c4.403,-7.44 3.804,-25.806 3.804,-25.806c-2.136,-2.96 -87.429,83.582 -98.146,120.042Z" fill="#B8C4C6" stroke="#B8C4C6" stroke-width="8"/>
+            <path class="att-path att-steam3" d="M1119.11,896.732c-0,-0 19.844,38.605 23.474,59.667c3.912,22.706 7.053,52.037 -0,76.564c-14.59,50.731 -92.269,116.669 -111.631,158.509c-13.387,28.928 -7.327,65.473 -4.541,92.532c2.492,24.202 26.373,74.771 26.373,74.771c-0,-0 -10.991,-47.764 -12.471,-65.546c-2.078,-24.972 -5.688,-67.548 12.471,-88.986c27.216,-32.132 82.698,-67.271 101.767,-105.845c19.069,-38.573 23.771,-92.936 12.648,-125.597c-12.648,-37.141 -48.09,-76.069 -48.09,-76.069Z" fill="#B8C4C6" stroke="#B8C4C6" stroke-width="8"/>
+          </g>
+        </svg>
+      </span>
+      <h3>at the table</h3>
+      <p>Mindful food journal. Log meals with a photo, then check in later on how you felt. Data stays on your device.</p>
+      <span class="tag">Food Journal</span>
+    </a>
+
     <!-- Invoice Builder -->
     <a class="app-card app-card-invoice" href="https://apw-invoices.the-self-study.com" target="_blank" rel="noopener">
       <span class="icon">
@@ -282,5 +316,84 @@
   For internal use only. Do not share this URL.
 </div>
 
+<script>
+(function () {
+  var svg    = document.getElementById('att-bowl');
+  if (!svg) return;
+  var body   = svg.querySelector('.att-body');
+  var gleam  = svg.querySelector('.att-gleam');
+  var rim    = svg.querySelector('.att-rim');
+  var utensil = svg.querySelector('.att-utensil');
+  var steam1 = svg.querySelector('.att-steam1');
+  var steam2 = svg.querySelector('.att-steam2');
+  var steam3 = svg.querySelector('.att-steam3');
+
+  var DRAW_S = 2, FILL_S = 0.3, UNDRAW_S = 1.2, STAGGER_S = 0.5;
+  var STEAM_OVERLAP_S = 2, STEAM_STAGGER_S = 0.15;
+  var steamStart = STAGGER_S * 2 + DRAW_S - STEAM_OVERLAP_S; // 1.0s
+  var PAUSE_DRAW_MS = 800, PAUSE_UNDRAW_MS = 200;
+  var timers = [];
+
+  function L(p) { return p._len || (p._len = p.getTotalLength()); }
+  function after(ms, fn) { var t = setTimeout(fn, ms); timers.push(t); }
+  function clearAll() { timers.forEach(clearTimeout); timers = []; }
+
+  function snapHidden(p) {
+    p.style.transition = 'none';
+    p.style.strokeDasharray = L(p) + ' ' + L(p);
+    p.style.strokeDashoffset = L(p);
+    p.style.fillOpacity = '0';
+  }
+
+  function drawPath(p, delay) {
+    after(delay, function () {
+      p.style.transition = 'stroke-dashoffset ' + DRAW_S + 's ease-in-out, fill-opacity ' + FILL_S + 's ease-in';
+      p.style.strokeDashoffset = '0';
+      p.style.fillOpacity = '1';
+    });
+  }
+
+  function doUndraw() {
+    clearAll();
+    var stroked = [body, rim, utensil, steam1, steam2, steam3];
+    stroked.forEach(function (p) {
+      p.style.transition = 'none'; p.style.strokeDashoffset = '0'; p.style.fillOpacity = '1';
+    });
+    gleam.style.transition = 'none'; gleam.style.fillOpacity = '0.25';
+    void body.getBoundingClientRect();
+    var t = 'stroke-dashoffset ' + UNDRAW_S + 's ease-in-out, fill-opacity ' + UNDRAW_S + 's ease-in-out';
+    stroked.forEach(function (p) {
+      p.style.transition = t; p.style.strokeDashoffset = L(p); p.style.fillOpacity = '0';
+    });
+    gleam.style.transition = 'fill-opacity ' + UNDRAW_S + 's ease-in-out';
+    gleam.style.fillOpacity = '0';
+    after(UNDRAW_S * 1000, function () { after(PAUSE_UNDRAW_MS, doPlay); });
+  }
+
+  function doPlay() {
+    clearAll();
+    [body, rim, utensil, steam1, steam2, steam3].forEach(snapHidden);
+    gleam.style.transition = 'none'; gleam.style.fillOpacity = '0';
+    void body.getBoundingClientRect();
+
+    // Body + gleam
+    after(0, function () {
+      body.style.transition = 'stroke-dashoffset ' + DRAW_S + 's ease-in-out, fill-opacity ' + FILL_S + 's ease-in';
+      body.style.strokeDashoffset = '0'; body.style.fillOpacity = '1';
+      gleam.style.transition = 'fill-opacity ' + FILL_S + 's ease-in';
+      gleam.style.fillOpacity = '0.25';
+    });
+    drawPath(rim,     STAGGER_S * 1000);
+    drawPath(utensil, STAGGER_S * 2 * 1000);
+    drawPath(steam1,  steamStart * 1000);
+    drawPath(steam2,  (steamStart + STEAM_STAGGER_S) * 1000);
+    drawPath(steam3,  (steamStart + STEAM_STAGGER_S * 2) * 1000);
+
+    after((STAGGER_S * 2 + DRAW_S) * 1000, function () { after(PAUSE_DRAW_MS, doUndraw); });
+  }
+
+  doPlay();
+})();
+</script>
 </body>
 </html>
